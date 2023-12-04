@@ -21,14 +21,19 @@ where the potential repulsive equation is partially derived to the x and y-axis 
 $$v_{x}^{rep}(x,y)=-\frac{\partial U_{rep}(x,y)}{\partial x}$$ $$v_{y}^{rep}(x,y)=-\frac{\partial U_{rep}(x,y)}{\partial y}$$
 The equation of the Sfeir’s et al potential repulsive $U_{rep}(x,y)$ is:
 $$U_{rep}=\frac{1}{2}k_{r}((\frac{1}{\rho_{O}}-\frac{1}{r_{O}}))^2$$
-$$CE(p, y) = \begin{cases}
-    -\log(p) & \text{if } y = 1 \\ 
-    -\log(1-p) & \text{otherwise.}
-\end{cases}$$
+$$
+X(m, n) =
+\begin{cases}
+x(n) & \text{if condition 1}, \\
+x(n-1) & \text{if condition 2}, \\
+x(n-1) & \text{if condition 3}.
+\end{cases}
+$$
+
 where $k_{r}$ is the potential repulsive constant, $r_{O}$ is the distance limit of potential repulsive influence, and $\rho_{O}$ is the closest distance between the robot and the obstacle. \
 The closest distance between the robot and the obstacle, $\rho_{O}$ is:
 $$\rho_{O}=\sqrt{(x_{ro})^2+(y_{ro})^2}$$
-where $x_{or}$ is the difference of the distance between the robot and the obstacle on thex-axis, and $y_{or}$ is the difference of the distance between the robot and the obstacle on the y-axis which the equation is as follows:
+where $x_{or}$ is the difference of the distance between the robot and the obstacle on the x-axis, and $y_{or}$ is the difference of the distance between the robot and the obstacle on the y-axis which the equation is as follows:
 $$x_{or}=\delta_{x}-x_{O}$$ $$y_{or}=\delta_{y}-y_{O}$$ 
 The following is the desired speed equation for the APF Repulsive force $v_{O}^{rep}$ on the x and y-axes:
 
@@ -36,7 +41,7 @@ Thus, the speed equations of the x and y-axes in the APF are as follows:
 $$v_{x}^{APF}=v_{G_{x}}^{att}+v_{O_{x}}^{rep}$$ $$v_{y}^{APF}=v_{G_{y}}^{att}+v_{O_{y}}^{rep}$$
 
 ## Breadth-First Search (BFS) Algorithm
-Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered as successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth first search is only optimal if the path cost is the same for each direction.\
+Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered as successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth-first search is only optimal if the path cost is the same for each direction.\
 ![End-to-end process of Breadth-First Search Algorithm](https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/BFS-Example-Solution-Breadth-First-Search-Algorithm-Edureka-1.png)\
 
 ## A-star (A*) Algorithm
