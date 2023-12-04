@@ -21,14 +21,6 @@ where the potential repulsive equation is partially derived to the x and y-axis 
 $$v_{x}^{rep}(x,y)=-\frac{\partial U_{rep}(x,y)}{\partial x}$$ $$v_{y}^{rep}(x,y)=-\frac{\partial U_{rep}(x,y)}{\partial y}$$
 The equation of the Sfeir’s et al potential repulsive $U_{rep}(x,y)$ is:
 $$U_{rep}=\frac{1}{2}k_{r}((\frac{1}{\rho_{O}}-\frac{1}{r_{O}}))^2$$
-$$
-X(m, n) =
-\begin{cases}
-x(n) & \text{if condition 1}, \\
-x(n-1) & \text{if condition 2}, \\
-x(n-1) & \text{if condition 3}.
-\end{cases}
-$$
 
 where $k_{r}$ is the potential repulsive constant, $r_{O}$ is the distance limit of potential repulsive influence, and $\rho_{O}$ is the closest distance between the robot and the obstacle. \
 The closest distance between the robot and the obstacle, $\rho_{O}$ is:
