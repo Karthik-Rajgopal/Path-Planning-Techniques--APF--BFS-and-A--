@@ -37,25 +37,42 @@ Breadth First search is known as an uninformed search because it does not use an
 ![End-to-end process of Breadth-First Search Algorithm](https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/BFS-Example-Solution-Breadth-First-Search-Algorithm-Edureka-1.png)
 
 ## A-star (A*) Algorithm
+A* Search is an informed best-first search algorithm that efficiently determines the lowest cost path between any two nodes in a directed weighted graph with non-negative edge weights. This algorithm is a variant of Dijkstra’s algorithm. A slight difference arises from the fact that an evaluation function is used to determine which node to explore next. \
+The evaluation function, f(x), for the A* search algorithm is the following:
+$$f(x)=g(x)+h(x)$$
+where $g(x)$ represents the cost to get to node $x$ and $h(x)$ represents the estimated cost to arrive at the goal node from node $x$.
 
+The A* algorithm is implemented in a similar way to Dijkstra’s algorithm. Given a weighted graph with non-negative edge weights, to find the lowest-cost path from a start node S to a goal node G, two lists are used:
+* An open list, implemented as a priority queue, which stores the next nodes to be explored. Because this is a priority queue, the most promising candidate node (the one with the lowest value from the evaluation function) is always at the top. Initially, the only node in this list is the start node S.
+* A closed list which stores the nodes that have already been evaluated. When a node is in the closed list, it means that the lowest-cost path to that node has been found.
 
+To find the lowest cost path, a search tree is constructed in the following way:
 
-Instructions:
+1. Initialize a tree with the root node being the start node S.
+2. Remove the top node from the open list for exploration.
+3. Add the current node to the closed list.
+4. Add all nodes that have an incoming edge from the current node as child nodes in the tree.
+5. Update the lowest cost to reach the child node.
+6. Compute the evaluation function for every child node and add them to the open list.
 
-1. Prepare your workspace and copy the “Milestone5” package, this roslaunch Milestone 5 <<name of the launch file>>.
+All nodes except for the start node start with a lowest cost of infinity. The start node has an initial lowest cost of 0. The algorithm concludes when the goal node G is removed from the open list and explored, indicating that a shortest path has been found. The shortest path is the path from the start node S to the goal node G in the tree.
 
-NOTE: 
+# Instructions:
+
+Prepare your workspace and copy the “Milestone5” package, this roslaunch Milestone 5 <<name of the launch file>>.
+
+**NOTE :** \
 The launch files available are: -
 
-Turtlebot3_Astar.launch >>> after launching this file you will see the map and movement of the turtltebot3 using A* path planning technique. 
+* Turtlebot3_Astar.launch >>> after launching this file you will see the map and movement of the turtltebot3 using A* path planning technique. 
 
-Turtlebot3_Astar_modified.launch >>> the same as A* but with modified algorithm, related to the mechanism of A* itself that it provides more optimized path.
+* Turtlebot3_Astar_modified.launch >>> the same as A* but with modified algorithm, related to the mechanism of A* itself that it provides more optimized path.
 
-Turtlebot3_BFS.launch >>>  after launching this file you will see the map and movement of the turtltebot3 using A* path planning technique. 
+* Turtlebot3_BFS.launch >>>  after launching this file you will see the map and movement of the turtltebot3 using A* path planning technique. 
 
-Turtlebot3_ID_world.launch >>>  after launching this file you will see the map and movement of the turtltebot3 using APF path planning technique. 
+* Turtlebot3_ID_world.launch >>>  after launching this file you will see the map and movement of the turtltebot3 using APF path planning technique. 
 
-The related “Python” files associating for all these path planning technquies can be found easily in the src folder. 
+The related “Python” files associating for all these path planning techniques can be found in the src folder. 
 
 
 
