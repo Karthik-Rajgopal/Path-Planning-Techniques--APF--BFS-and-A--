@@ -1,3 +1,5 @@
+# Path Planning Techniques (APF, BFS and A* algorithms)
+
 This project involves testing different path planning techniques in a Gazebo simulator world comprising of obstacles and how the UGV, here Turtlebot3 managed to get to the goal position. It tackles 3 path planning technquies which are (Artificial potential field (APF), Breadth first search (BFS), and A*).
 
 First, the control techniques used for the Turtlebot3 to move was mainly 2 control techniques which are Lyapunov and Goal to Goal compiled in a package called "Milestone 5". 
