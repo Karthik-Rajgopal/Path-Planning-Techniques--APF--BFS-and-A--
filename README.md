@@ -1,4 +1,4 @@
-<img width="288" alt="image" src="https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/assets/110279423/baa4f5b0-eb94-423a-a111-68c70e475ed7"># Path Planning Techniques (APF, BFS and A* algorithms)
+# Path Planning Algorithms (APF, BFS, and A*)
 
 This project involves testing different path planning techniques in a Gazebo simulator world comprising of obstacles and how the UGV, here Turtlebot3 managed to get to the goal position. It tackles 3 path planning techniques which are (Artificial potential field (APF), Breadth-first search (BFS), and A*).
 
@@ -50,9 +50,12 @@ $$v_{x}^{APF}=v_{G_{x}}^{att}+v_{O_{x}}^{rep}$$ $$v_{y}^{APF}=v_{G_{y}}^{att}+v_
 <strong>Potential in a local minima environment</strong>
 </div><br>
 ## Breadth-First Search (BFS) Algorithm
-Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered as successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth-first search is only optimal if the path cost is the same for each direction.\
-![End-to-end process of Breadth-First Search Algorithm](https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/BFS-Example-Solution-Breadth-First-Search-Algorithm-Edureka-1.png)
+Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered as successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth-first search is only optimal if the path cost is the same for each direction.
 
+<div align="center">
+<img src="https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/BFS-Example-Solution-Breadth-First-Search-Algorithm-Edureka-1.png" width= "700">
+</div>>
+<br>
 ## A-star (A*) Algorithm
 A* Search is an informed best-first search algorithm that efficiently determines the lowest cost path between any two nodes in a directed weighted graph with non-negative edge weights. This algorithm is a variant of Dijkstra’s algorithm. A slight difference arises from the fact that an evaluation function is used to determine which node to explore next. \
 The evaluation function, f(x), for the A* search algorithm is the following:
