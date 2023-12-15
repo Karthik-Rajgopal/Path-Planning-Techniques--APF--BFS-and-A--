@@ -43,7 +43,8 @@ The following is the desired speed equation for the APF Repulsive force $v_{O}^{
 <img src="https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/vy_rep.png" width= "350">
 </div><br>
 Thus, the speed equations of the x and y-axes in the APF are as follows:
-$$v_{x}^{APF}=v_{G_{x}}^{att}+v_{O_{x}}^{rep}$$ $$v_{y}^{APF}=v_{G_{y}}^{att}+v_{O_{y}}^{rep}$$
+$$v_{x}^{APF}=v_{G_{x}}^{att}+v_{O_{x}}^{rep}$$ 
+$$v_{y}^{APF}=v_{G_{y}}^{att}+v_{O_{y}}^{rep}$$
 
 <div align="center">
 <img src="https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/apf-2.png" width="600"><br>
@@ -52,13 +53,15 @@ $$v_{x}^{APF}=v_{G_{x}}^{att}+v_{O_{x}}^{rep}$$ $$v_{y}^{APF}=v_{G_{y}}^{att}+v_
 
 ## Breadth-First Search (BFS) Algorithm:
 
-Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered as successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth-first search is only optimal if the path cost is the same for each direction.
+Breadth First search is known as an uninformed search because it does not use any information about how far the robot has traveled or how far the robot is from the goal.  BFS begins at the starting position of the robot (root node) and begins looking for the goal by  expanding all of the successors of the root node.  In the scenario stated at the very start of this tutorial, the successors of a node are all allowable directions that the robot could travel next. Allowable means that directions causing the robot to crash into an obstacle,  to move outside of the workspace will not be considered successors of the node.  Nodes that have already been visited by the robot will not be considered successors either. To do this a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue and the nodes of the current level are marked visited and popped from the queue. Breadth-first search is only optimal if the path cost is the same for each direction.
 
 <div align="center">
 <img src="https://github.com/Karthik-Rajgopal/Path-Planning-Techniques--APF--BFS-and-A--/blob/main/BFS-Example-Solution-Breadth-First-Search-Algorithm-Edureka-1.png" width= "700">
 </div>>
 <br>
-## A-star (A*) Algorithm
+
+## A-star (A*) Algorithm:
+
 A* Search is an informed best-first search algorithm that efficiently determines the lowest cost path between any two nodes in a directed weighted graph with non-negative edge weights. This algorithm is a variant of Dijkstra’s algorithm. A slight difference arises from the fact that an evaluation function is used to determine which node to explore next. \
 The evaluation function, f(x), for the A* search algorithm is the following:
 $$f(x)=g(x)+h(x)$$
